@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /items:
+    get:
+      summary: Get all items
+      responses:
+        "200":
+          description: OK
+    post:
+      summary: Create item
+      responses:
+        "201":
+          description: Created
+  /items/{id}:
+    get:
+      summary: Get item by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+    put:
+      summary: Update item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Updated
+    patch:
+      summary: Partially update item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Patched
+    delete:
+      summary: Delete item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
